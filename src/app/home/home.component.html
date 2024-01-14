@@ -1,18 +1,21 @@
 
+
 <form [formGroup]="checkBoxForm">
+
+  <div class="container" style="width: max-content;">
 
   <!--SEO-->
 
-  <section class="form-container d-flex justify-content-center m-3">
+  <section class="justify-content-center m-3">
     <div class="row align-items-center shadow rounded-3">
-      <div class="col m-4">
+      <div class="col-6 m-4">
         <h4>{{ options[0].title }}</h4>
         <p>{{ options[0].description }}</p>
       </div>
       <div class="col">
-        <h1>{{ options[0].price }}
+        <h2>{{ options[0].price }}
           <i class="bi bi-currency-euro"></i>
-        </h1>
+        </h2>
       </div>
       <div class="col form-check">
         <input type="checkbox" class="form-check-input" formControlName="box1" id="box1">
@@ -23,16 +26,16 @@
 
   <!--ADS-->
 
-  <section class="form-container d-flex justify-content-center m-3">
+  <section class="justify-content-center m-3">
     <div class="row align-items-center shadow rounded-3">
-      <div class="col m-4">
+      <div class="col-6 m-4">
         <h4>{{ options[1].title }}</h4>
         <p>{{ options[1].description }}</p>
       </div>
       <div class="col">
-        <h1>{{ options[1].price }}
+        <h2>{{ options[1].price }}
           <i class="bi bi-currency-euro"></i>
-        </h1>
+        </h2>
       </div>
       <div class="col form-check">
         <input type="checkbox" class="form-check-input" formControlName="box2" id="box2">
@@ -43,16 +46,16 @@
 
   <!--WEB-->
 
-  <section class="form-container d-flex justify-content-center m-3">
+  <section class="justify-content-center m-3">
     <div class="row align-items-center shadow rounded-3">
-      <div class="col m-4">
+      <div class="col-6 m-4">
         <h4>{{ options[2].title }}</h4>
         <p>{{ options[2].description }}</p>
       </div>
       <div class="col">
-        <h1>{{ options[2].price }}
+        <h2>{{ options[2].price }}
           <i class="bi bi-currency-euro"></i>
-        </h1>
+        </h2>
       </div>
       <div class="col form-check">
         <input type="checkbox" class="form-check-input" formControlName="box3" id="box3">
@@ -61,5 +64,19 @@
     </div>
   </section>
 
+  <!--Preu pressupost-->
 
+  <div class="container">
+    <div class="row d-flex justify-content-end">
+      <div class="col-9 text-end">
+        <p class="fw-bold fs-3"> Preu pressupostat:</p>
+      </div>
+      <div class="col-3 text-end">
+        <h3 class="fw-bold fs-2">0
+          <i class="bi bi-currency-euro"></i>
+        </h3>
+     </div>
+    </div>
+  </div>
+</div>
 </form>

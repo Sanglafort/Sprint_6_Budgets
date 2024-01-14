@@ -19,7 +19,7 @@ export class BudgetService {
     },
     {
       title: 'Web',
-      description: "Programació d'una pàgina web completa",
+      description: "Programació d'una pàgina web responsive completa",
       price: 500
     }
 
