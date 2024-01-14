@@ -1,1 +1,65 @@
-<p>home works!</p>
+
+<form [formGroup]="checkBoxForm">
+
+  <!--SEO-->
+
+  <section class="form-container d-flex justify-content-center m-3">
+    <div class="row align-items-center shadow rounded-3">
+      <div class="col m-4">
+        <h4>{{ options[0].title }}</h4>
+        <p>{{ options[0].description }}</p>
+      </div>
+      <div class="col">
+        <h1>{{ options[0].price }}
+          <i class="bi bi-currency-euro"></i>
+        </h1>
+      </div>
+      <div class="col form-check">
+        <input type="checkbox" class="form-check-input" formControlName="box1" id="box1">
+        <label for="box1" class="form-check-label">Afegir</label>
+      </div>
+    </div>
+  </section>
+
+  <!--ADS-->
+
+  <section class="form-container d-flex justify-content-center m-3">
+    <div class="row align-items-center shadow rounded-3">
+      <div class="col m-4">
+        <h4>{{ options[1].title }}</h4>
+        <p>{{ options[1].description }}</p>
+      </div>
+      <div class="col">
+        <h1>{{ options[1].price }}
+          <i class="bi bi-currency-euro"></i>
+        </h1>
+      </div>
+      <div class="col form-check">
+        <input type="checkbox" class="form-check-input" formControlName="box2" id="box2">
+        <label for="box2" class="form-check-label">Afegir</label>
+      </div>
+    </div>
+  </section>
+
+  <!--WEB-->
+
+  <section class="form-container d-flex justify-content-center m-3">
+    <div class="row align-items-center shadow rounded-3">
+      <div class="col m-4">
+        <h4>{{ options[2].title }}</h4>
+        <p>{{ options[2].description }}</p>
+      </div>
+      <div class="col">
+        <h1>{{ options[2].price }}
+          <i class="bi bi-currency-euro"></i>
+        </h1>
+      </div>
+      <div class="col form-check">
+        <input type="checkbox" class="form-check-input" formControlName="box3" id="box3">
+        <label for="box3" class="form-check-label">Afegir</label>
+      </div>
+    </div>
+  </section>
+
+
+</form>
