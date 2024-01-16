@@ -22,6 +22,9 @@ export class BudgetService {
       description: "Programació d'una pàgina web responsive completa",
       price: 500
     }
-
   ]
+
+  calculateTotalPrice(nPages: number, nLanguages: number): number {
+    return nPages * nLanguages + 30;
+  }
 }

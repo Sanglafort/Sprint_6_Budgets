@@ -1,0 +1,6 @@
+.panel {
+  width: 3rem;
+  border-color: grey;
+  border-radius: 10px;
+  opacity: 25%;
+}

@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { BudgetService } from '../services/budget.service';
 import { BudgetOptions } from '../interfaces/budgetOptions.interface';
+import { PanelComponent } from '../panel/panel.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ ReactiveFormsModule ],
+  imports: [ ReactiveFormsModule, PanelComponent, CommonModule ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -17,14 +19,16 @@ export class HomeComponent {
   public status: boolean [] = [false];
 
   public checkBoxForm : FormGroup = this.fb.group({
-    box1: [false, [ Validators.required, Validators.requiredTrue ]],
-    box2: [false, [ Validators.required, Validators.requiredTrue ]],
-    box3: [false, [ Validators.required, Validators.requiredTrue ]],
+    box1: [false],
+    box2: [false],
+    box3: [false],
   });
 
   constructor(
     public fb: FormBuilder,
     public budgetOptions: BudgetService
     ) {}
+
+    public TotalBudget: any = 0;
 
 }

@@ -2,7 +2,7 @@
 
 <form [formGroup]="checkBoxForm">
 
-  <div class="container" style="width: max-content;">
+  <div class="container" style="width: max;">
 
   <!--SEO-->
 
@@ -61,6 +61,11 @@
         <input type="checkbox" class="form-check-input" formControlName="box3" id="box3">
         <label for="box3" class="form-check-label">Afegir</label>
       </div>
+      @if (checkBoxForm.get('box3')?.value) {
+        <div>
+          <app-panel (webPrice)="TotalBudget($event)"></app-panel>
+        </div>
+      }
     </div>
   </section>
 
@@ -79,4 +84,5 @@
     </div>
   </div>
 </div>
+
 </form>
