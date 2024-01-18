@@ -29,8 +29,43 @@ export class PanelComponent implements OnInit {
       nPages: 1,
       nLanguages: 1
     });
-
-
   }
+
+  public addPages():void {
+    const nPages = this.panelForm.get('nPages');
+    if(nPages) {
+      const currentNum = nPages.value || 1
+      nPages.setValue(currentNum + 1);
+    }
+  }
+
+  public subsPages():void {
+    const nPages = this.panelForm.get('nPages');
+    if(nPages) {
+      const currentNum = nPages.value || 1;
+      if(currentNum !== 1) {
+        nPages.setValue(currentNum - 1);
+      }
+    }
+  }
+
+  public addLangs():void {
+    const nLanguages = this.panelForm.get('nLanguages');
+    if(nLanguages) {
+      const currentNum = nLanguages.value || 1
+      nLanguages.setValue(currentNum + 1);
+    }
+  }
+
+  public subsLangs():void {
+    const nLanguages = this.panelForm.get('nLanguages');
+    if(nLanguages) {
+      const currentNum = nLanguages.value || 1;
+      if(currentNum !== 1) {
+        nLanguages.setValue(currentNum - 1);
+      }
+    }
+  }
+
 
 }
