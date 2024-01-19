@@ -1,11 +1,12 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { BudgetService } from '../services/budget.service';
+import { ModalComponent } from '../shared/modal/modal.component';
 
 @Component({
   selector: 'app-panel',
   standalone: true,
-  imports: [ ReactiveFormsModule ],
+  imports: [ ReactiveFormsModule, ModalComponent ],
   templateUrl: './panel.component.html',
   styleUrl: './panel.component.css'
 })
@@ -25,10 +26,15 @@ export class PanelComponent implements OnInit {
   ) {};
 
   ngOnInit(): void {
-    this.panelForm.setValue({
-      nPages: 1,
-      nLanguages: 1
-    });
+    this.panelForm.valueChanges.subscribe(() => {
+      const nPages = this.panelForm.get('nPages')?.value;
+      const nLanguages = this.panelForm.get('nLanguages')?.value;
+
+      if (this.panelForm.valid) {
+        const extra = this.budgetService.calculateTotalPrice(nPages, nLanguages);
+        this.webPrice.emit(extra);
+      }
+    })
   }
 
   public addPages():void {
@@ -65,6 +71,10 @@ export class PanelComponent implements OnInit {
         nLanguages.setValue(currentNum - 1);
       }
     }
+  }
+
+  showModal() {
+
   }
 
 

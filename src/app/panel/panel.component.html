@@ -1,8 +1,11 @@
 <form [formGroup]="panelForm">
 
   <div class="container d-flex flex-row align-items-center justify-content-end">
-    <i class="bi bi-info-circle"></i>
+    <button type="button" data-bs-toggle="modal" data-bs-target="#infoModalLang" class="btn btn-rounded">
+      <i type="button" class="bi bi-info-circle" id="infoButton"></i>
+    </button>
     <p class="fw-bold m-2">Nombre de pàgines: </p>
+    <app-modal></app-modal>
     <!--TO DO Modal-->
     <button class="btn btn-rounded" (click)="addPages()"><i class="bi bi-plus-circle" style="color: grey"></i></button>
     <input class="panel fw-bold" type="text" [value]="panelForm" formControlName="nPages">
@@ -10,13 +13,18 @@
   </div>
 
   <div class="container d-flex flex-row mb-3 align-items-center justify-content-end">
-    <i class="bi bi-info-circle"></i>
+    <button  type="button" data-bs-toggle="modal" class="btn btn-rounded">
+      <i class="bi bi-info-circle" id="infoButton"></i>
+      <app-modal></app-modal>
+    </button>
     <p class="fw-bold m-2">Nombre de llenguatges: </p>
     <!--TO DO Modal-->
     <button class="btn btn-rounded" (click)="addLangs()"><i class="bi bi-plus-circle" style="color: grey"></i></button>
     <input class="panel fw-bold" type="text" [value]="panelForm" formControlName="nLanguages">
     <button class="btn btn-rounded" (click)="subsLangs()"><i class="bi bi-dash-circle" style="color: grey"></i></button>
   </div>
+
+
 
 
 </form>

@@ -24,7 +24,9 @@ export class BudgetService {
     }
   ]
 
-  calculateTotalPrice(nPages: number, nLanguages: number): number {
-    return nPages * nLanguages + 30;
+  public calculateTotalPrice(nPages: number, nLanguages: number): number {
+    return nPages * nLanguages * 30;
   }
+
+
 }
