@@ -6,7 +6,6 @@
     </button>
     <p class="fw-bold m-2">Nombre de pàgines: </p>
     <app-modal></app-modal>
-    <!--TO DO Modal-->
     <button class="btn btn-rounded" (click)="addPages()"><i class="bi bi-plus-circle" style="color: grey"></i></button>
     <input class="panel fw-bold" type="text" [value]="panelForm" formControlName="nPages">
     <button class="btn btn-rounded" (click)="subsPages()"><i class="bi bi-dash-circle" style="color: grey"></i></button>
@@ -18,13 +17,9 @@
       <app-modal></app-modal>
     </button>
     <p class="fw-bold m-2">Nombre de llenguatges: </p>
-    <!--TO DO Modal-->
     <button class="btn btn-rounded" (click)="addLangs()"><i class="bi bi-plus-circle" style="color: grey"></i></button>
     <input class="panel fw-bold" type="text" [value]="panelForm" formControlName="nLanguages">
     <button class="btn btn-rounded" (click)="subsLangs()"><i class="bi bi-dash-circle" style="color: grey"></i></button>
   </div>
-
-
-
 
 </form>
