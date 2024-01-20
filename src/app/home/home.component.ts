@@ -12,11 +12,12 @@ import { CommonModule } from '@angular/common';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
+
 export class HomeComponent {
 
   public options: BudgetOptions[] = this.budgetOptions.budgetOptions;
-
-  public status: boolean [] = [false];
+  public totalBudget: number = 0;
+ // public status: boolean [] = [false];
 
   public checkBoxForm : FormGroup = this.fb.group({
     box1: [false],
@@ -28,7 +29,5 @@ export class HomeComponent {
     public fb: FormBuilder,
     public budgetOptions: BudgetService
     ) {}
-
-    public TotalBudget: any = 0;
 
 }

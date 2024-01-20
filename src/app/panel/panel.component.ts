@@ -73,9 +73,4 @@ export class PanelComponent implements OnInit {
     }
   }
 
-  showModal() {
-
-  }
-
-
 }
