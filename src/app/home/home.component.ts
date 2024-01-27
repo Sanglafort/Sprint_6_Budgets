@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { BudgetService } from '../services/budget.service';
 import { BudgetOptions } from '../interfaces/budgetOptions.interface';
@@ -13,11 +13,10 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.component.css'
 })
 
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
   public options: BudgetOptions[] = this.budgetOptions.budgetOptions;
-  public totalBudget: number = 0;
- // public status: boolean [] = [false];
+  public currentBudget: number = 0;
 
   public checkBoxForm : FormGroup = this.fb.group({
     box1: [false],
@@ -29,5 +28,35 @@ export class HomeComponent {
     public fb: FormBuilder,
     public budgetOptions: BudgetService
     ) {}
+
+  ngOnInit(): void {
+    this.checkBoxForm.valueChanges.subscribe(() => {
+      this.updatePrice();
+    });
+
+    this.budgetOptions.extras$.subscribe((extras) => {
+      this.updatePrice(extras);
+    })
+
+  }
+
+  public updatePrice(extras = 0): void {
+    let currentBudget = 0;
+
+    if (this.checkBoxForm.get('box1')?.value) {
+      currentBudget += this.options[0].price;
+    }
+
+    if (this.checkBoxForm.get('box2')?.value) {
+      currentBudget += this.options[1].price;
+    }
+
+    if (this.checkBoxForm.get('box3')?.value) {
+      currentBudget += this.options[2].price + extras;
+    }
+
+    this.currentBudget = currentBudget;
+
+  }
 
 }

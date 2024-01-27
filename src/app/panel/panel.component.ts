@@ -12,8 +12,7 @@ import { ModalComponent } from '../shared/modal/modal.component';
 })
 export class PanelComponent implements OnInit {
 
-  @Output()
-  webPrice: EventEmitter<number> = new EventEmitter();
+  @Output() webPrice: EventEmitter<number> = new EventEmitter();
 
   public panelForm: FormGroup = this.fb.group({
     nPages: [1, [Validators.required, Validators.min(1)]],
@@ -29,10 +28,12 @@ export class PanelComponent implements OnInit {
     this.panelForm.valueChanges.subscribe(() => {
       const nPages = this.panelForm.get('nPages')?.value;
       const nLanguages = this.panelForm.get('nLanguages')?.value;
+      console.log(nPages, nLanguages)
 
       if (this.panelForm.valid) {
-        const extra = this.budgetService.calculateTotalPrice(nPages, nLanguages);
-        this.webPrice.emit(extra);
+        const extras = this.budgetService.calculateTotalPrice(nPages, nLanguages);
+        this.webPrice.emit(extras);
+        console.log(extras)
       }
     })
   }
