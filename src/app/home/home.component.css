@@ -2,5 +2,10 @@
 .with-panel {
   border-radius: 1rem;
   border-color: greenyellow;
+}
 
+.infoInput {
+  display: flex;
+  border-color: rgb(227, 226, 226);
+  border-radius: 50%;
 }

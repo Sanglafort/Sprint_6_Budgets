@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { BudgetService } from '../services/budget.service';
 import { BudgetOptions } from '../interfaces/budgetOptions.interface';
 import { PanelComponent } from '../panel/panel.component';
@@ -56,7 +56,18 @@ export class HomeComponent implements OnInit {
     }
 
     this.currentBudget = currentBudget;
-
   }
 
+// Formulario para enviar datos al array budgetList al solicitar presupuesto.
+
+public dataForm: FormGroup = this.fb.group ({
+  name: ['', [Validators.required, Validators.min(1)]],
+  phone: [0, [Validators.required, Validators.min(9)]],
+  email: ['', [Validators.required, Validators.email]],
+})
+
 }
+
+
+
+
