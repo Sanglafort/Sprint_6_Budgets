@@ -58,13 +58,6 @@ export class HomeComponent implements OnInit {
     this.currentBudget = currentBudget;
   }
 
-// Formulario para enviar datos al array budgetList al solicitar presupuesto.
-
-public dataForm: FormGroup = this.fb.group ({
-  name: ['', [Validators.required, Validators.min(1)]],
-  phone: [0, [Validators.required, Validators.min(9)]],
-  email: ['', [Validators.required, Validators.email]],
-})
 
 }
 
